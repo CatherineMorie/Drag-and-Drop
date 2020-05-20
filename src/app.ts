@@ -1,5 +1,8 @@
 // Project Type
-enum ProjectStatus { Active, Finished }
+enum ProjectStatus {
+  Active,
+  Finished,
+}
 
 class Project {
   constructor(
@@ -34,10 +37,14 @@ class ProjectState {
     this.listeners.push(listenerFn);
   }
 
-  addProject(title: string, description: string, numberOfPeople: number) {
-    const newProject = new Project(Math.random().toString(), title, description, people, status, ProjectStatus.Active) {
-
-    }
+  addProject(title: string, description: string, numOfPeople: number) {
+    const newProject = new Project(
+      Math.random().toString(),
+      title,
+      description,
+      numOfPeople,
+      ProjectStatus.Active
+    );
     this.projects.push(newProject);
     for (const listenerFn of this.listeners) {
       // use slice to pass a copy of the array (not the original) to ensure function cannot edit or change elsewhere (side effects).
