@@ -151,7 +151,11 @@ class ProjectList {
   }
 
   private renderProjects() {
-    const listEl = document.getElementById(`${this.type}-project-list`)!;
+    const listEl = document.getElementById(
+      `${this.type}-project-list`
+    )! as HTMLUListElement;
+    // remove list items and re-render to remove duplication of rendering. not efficient but ok for this demo, per instructor.
+    listEl.innerHTML = "";
     for (const prjItem of this.assignedProjects) {
       const listItem = document.createElement("li");
       listItem.textContent = prjItem.title;
