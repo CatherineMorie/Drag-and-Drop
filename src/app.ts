@@ -25,8 +25,7 @@ class State<T> {
   }
 }
 
-class ProjectState extends State<Project>{
-
+class ProjectState extends State<Project> {
   private projects: Project[] = [];
   private static instance: ProjectState;
 
@@ -206,13 +205,13 @@ class ProjectList extends Component<HTMLDivElement, HTMLElement> {
 }
 
 // ProjectInput Class
-class ProjectInput extends Component<HTMLDivElement, HTMLFormElement{
+class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
   titleInputElement: HTMLInputElement;
   descriptionInputElement: HTMLInputElement;
   peopleInputElement: HTMLInputElement;
 
   constructor() {
-    super('project-input', 'app', true, 'user-input');
+    super("project-input", "app", true, "user-input");
 
     this.titleInputElement = this.element.querySelector(
       "#title"
@@ -231,7 +230,7 @@ class ProjectInput extends Component<HTMLDivElement, HTMLFormElement{
     this.element.addEventListener("submit", this.submitHandler);
   }
 
-  renderContent() {};
+  renderContent() {}
 
   private gatherUserInput(): [string, string, number] | void {
     const enteredTitle = this.titleInputElement.value;
