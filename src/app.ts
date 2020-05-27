@@ -165,19 +165,6 @@ class ProjectList extends Component<HTMLDivElement, HTMLElement> {
     this.renderContent();
   }
 
-  private renderProjects() {
-    const listEl = document.getElementById(
-      `${this.type}-project-list`
-    )! as HTMLUListElement;
-    // remove list items and re-render to remove duplication of rendering. not efficient but ok for this demo, per instructor.
-    listEl.innerHTML = "";
-    for (const prjItem of this.assignedProjects) {
-      const listItem = document.createElement("li");
-      listItem.textContent = prjItem.title;
-      listEl.appendChild(listItem);
-    }
-  }
-
   configure() {
     projectState.addListener((projects: Project[]) => {
       const relevantProjects = projects.filter((prj) => {
@@ -197,6 +184,19 @@ class ProjectList extends Component<HTMLDivElement, HTMLElement> {
     this.element.querySelector("ul")!.id = listId;
     this.element.querySelector("h2")!.textContent = this.type.toUpperCase();
     +" PROJECTS";
+  }
+
+  private renderProjects() {
+    const listEl = document.getElementById(
+      `${this.type}-project-list`
+    )! as HTMLUListElement;
+    // remove list items and re-render to remove duplication of rendering. not efficient but ok for this demo, per instructor.
+    listEl.innerHTML = "";
+    for (const prjItem of this.assignedProjects) {
+      const listItem = document.createElement("li");
+      listItem.textContent = prjItem.title;
+      listEl.appendChild(listItem);
+    }
   }
 }
 
