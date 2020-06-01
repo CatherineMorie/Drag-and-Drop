@@ -15,13 +15,13 @@ export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
     super('project-input', 'app', true, 'user-input');
 
     this.titleInputElement = this.element.querySelector(
-      '#title',
+      '#title'
     ) as HTMLInputElement;
     this.descriptionInputElement = this.element.querySelector(
-      '#description',
+      '#description'
     ) as HTMLInputElement;
     this.peopleInputElement = this.element.querySelector(
-      '#people',
+      '#people'
     ) as HTMLInputElement;
 
     this.configure();

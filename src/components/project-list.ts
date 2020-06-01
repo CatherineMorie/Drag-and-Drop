@@ -34,7 +34,7 @@ export class ProjectList extends Component<HTMLDivElement, HTMLElement>
     const prjId = event.dataTransfer!.getData('text/plain');
     projectState.moveProject(
       prjId,
-      this.type === 'active' ? ProjectStatus.Active : ProjectStatus.Finished,
+      this.type === 'active' ? ProjectStatus.Active : ProjectStatus.Finished
     );
   }
 
@@ -71,7 +71,7 @@ export class ProjectList extends Component<HTMLDivElement, HTMLElement>
 
   private renderProjects() {
     const listEl = document.getElementById(
-      `${this.type}-project-list`,
+      `${this.type}-project-list`
     )! as HTMLUListElement;
     // remove list items and re-render to remove duplication of rendering. not efficient but ok for this demo, per instructor.
     listEl.innerHTML = '';
