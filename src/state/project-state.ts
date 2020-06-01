@@ -1,4 +1,4 @@
-import { Project, ProjectStatus } from "../models/project.js";
+import { Project, ProjectStatus } from '../models/project';
 
 // Project State Management
 
@@ -34,7 +34,7 @@ export class ProjectState extends State<Project> {
       title,
       description,
       numOfPeople,
-      ProjectStatus.Active
+      ProjectStatus.Active,
     );
     this.projects.push(newProject);
     this.updateListeners();
